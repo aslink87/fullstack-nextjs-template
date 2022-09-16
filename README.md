@@ -1,8 +1,6 @@
-# nextjs-node-fullstackapp-cn
+# NextJS, MongoDB, and Typescript App Template
 
-# Fullstack NextJS with MongoDB App with typescript support
-
-Leverages NextJS, TailwindCSS, Storybook, Typescript, Jest, Sass, Mongo, Husky, and Commitlint, Prettier, and ESLint
+Leverages NextJS, TailwindCSS, Storybook, Typescript, Jest, Sass, MongoDB, Husky, Commitlint, Prettier, and ESLint
 
 # How to Use
 
