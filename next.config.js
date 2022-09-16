@@ -2,13 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['i.pravatar.cc'],
+    domains: ['mydomain.com'],
   },
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
+  enabled: process.env.ANALYZE === 'true',
+});
 
 // module.exports = withBundleAnalyzer({})
 

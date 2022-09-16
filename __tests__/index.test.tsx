@@ -1,26 +1,18 @@
-/* globals describe, expect, it */
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Layout from '../components/layouts/primary/PrimaryLayout'
+import Layout from '../components/layouts/primary/PrimaryLayout';
+import { act } from 'react-dom/test-utils';
+import { createRoot } from 'react-dom/client';
 
-/*
-describe('Home', () => {
-  it('renders a heading', () => {
-    render(<Index />)
+test('renders Layout page', async () => {
+  // ARRANGE
+  const component = <Layout />;
+  const container = document.body.appendChild(document.createElement('div'));
+  act(() => createRoot(container).render(component));
 
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
-    })
+  // ACT
+  await screen.findByRole('main');
 
-    expect(heading).toBeInTheDocument()
-  })
-})
-*/
-
-describe('Layout page', () => {
-  it('should render', () => {
-    render(<Layout />)
-    const main = screen.getByRole('main');
-    expect(main).toBeInTheDocument();
-  })
-})
+  // ASSERT
+  expect(screen.getByRole('main')).toBeInTheDocument();
+});

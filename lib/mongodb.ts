@@ -6,8 +6,8 @@ const options = {};
 let client;
 let clientPromise: Promise<MongoClient>;
 let globalWithMongo = global as typeof global & {
-  _mongoClientPromise: Promise<MongoClient>
-}
+  _mongoClientPromise: Promise<MongoClient>;
+};
 
 if (!process.env.MONGODB_URI) {
   throw new Error('Please add your Mongo URI to .env.local');

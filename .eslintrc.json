@@ -1,25 +1,50 @@
 {
+  "env": {
+    "browser": true,
+    "es2020": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"],
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["jest", "@typescript-eslint", "prettier"],
   "extends": [
     "plugin:storybook/recommended",
     "next/core-web-vitals",
-    "next",
-    "eslint:recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "eslint:recommended",
+    "next"
   ],
-  "globals": {
-    "React": "readonly"
+  "rules": {
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
+    "prettier/prettier": "error",
+    "prefer-const": "off",
+    "no-use-before-define": "off",
+    "react/react-in-jsx-scope": "off",
+    "space-before-function-paren": [
+      "error",
+      {
+        "named": "never",
+        "anonymous": "never"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off"
   },
   "overrides": [
     {
       "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-      "env": {
-        "jest": true
-      },
       "rules": {
         "storybook/hierarchy-separator": "error"
       }
     }
-  ],
-  "rules": {
-    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
-  }
+  ]
 }

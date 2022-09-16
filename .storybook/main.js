@@ -1,15 +1,12 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
-  "stories": [
-    "../**/*.stories.mdx",
-    "../**/*.stories.@(js|jsx|ts|tsx)"
-  ],
+  stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
   staticDirs: ['../public'],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
     'storybook-addon-next',
     {
       /**
@@ -24,9 +21,9 @@ module.exports = {
       },
     },
   ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "@storybook/builder-webpack5",
-    "disableTelemetry": true
-  }
-}
+  framework: '@storybook/react',
+  core: {
+    builder: '@storybook/builder-webpack5',
+    disableTelemetry: true,
+  },
+};
